@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import BgVideo from "../../assets/author.mp4";
 import { FaInstagram, FaThreads, FaXTwitter } from "react-icons/fa6";
 
 const Section = styled.section`
@@ -139,7 +138,7 @@ const AuthorCard = () => {
             <Card>
                 <Left>
                     <video autoPlay loop muted playsInline>
-                        <source src={BgVideo} type="video/mp4" />
+                        <source src={`${process.env.PUBLIC_URL}/videos/author.mp4`} type="video/mp4" />
                     </video>
                 </Left>
                 <Right>

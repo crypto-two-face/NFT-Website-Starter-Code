@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import GIF from "../assets/webp/output.mp4";
 
 const VideoContainer = styled.div`
     position: relative;
@@ -83,7 +82,7 @@ const CoverVideo = () => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                <source src={GIF} type="video/mp4" />
+                <source src={`${process.env.PUBLIC_URL}/videos/output.mp4`} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
         </VideoContainer>
