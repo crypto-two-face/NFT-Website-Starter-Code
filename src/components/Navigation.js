@@ -1,14 +1,16 @@
+// src/components/Navigation.js
 import React from "react";
 import styled from "styled-components";
 import LogoImg from "../assets/logo Glitch.png";
 
-const Section = styled.section`
-    width: 100vw;
+const Section = styled.header`
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
     background: rgba(13, 13, 13, 0.8);
     backdrop-filter: blur(8px);
-    position: sticky;
-    top: 0;
-    z-index: 10;
 `;
 
 const NavBar = styled.nav`
@@ -16,21 +18,23 @@ const NavBar = styled.nav`
     justify-content: space-between;
     align-items: center;
     width: 85%;
-    height: ${props => props.theme.navHeight};
+    height: ${({ theme }) => theme.navHeight};
     margin: 0 auto;
 `;
 
+/* 以 clamp + vw 放大，避免死 px；logo 高度跟 navHeight 對齊 */
 const LogoWrapper = styled.div`
-    width: 320px;
-    height: 500px; /* 固定高度，避免 Mask 拉扯 */
+    width: clamp(180px, 26vw, 360px);
+    height: auto;
     cursor: pointer;
-    position: relative;
+
+    @media (max-width: 768px) {
+        width: clamp(180px, 36vw, 320px);
+    }
 
     .logo-mask {
         width: 100%;
-        height: 100%;
-
-        /* Mask 設定 */
+        height: ${({ theme }) => theme.navHeight};
         -webkit-mask-image: url(${LogoImg});
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-size: contain;
@@ -41,14 +45,7 @@ const LogoWrapper = styled.div`
         mask-size: contain;
         mask-position: left;
 
-        /* 背景流動漸層 */
-        background: linear-gradient(
-                -45deg,
-                #ff00ff,
-                #00ffff,
-                #ff1493,
-                #1e90ff
-        );
+        background: linear-gradient(-45deg, #ff00ff, #00ffff, #ff1493, #1e90ff);
         background-size: 400% 400%;
         animation: gradientMove 8s ease infinite;
     }
@@ -82,7 +79,7 @@ const MenuItem = styled.li`
     position: relative;
 
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -5px;
         left: 0;
@@ -100,16 +97,14 @@ const MenuItem = styled.li`
 const Navigation = () => {
     const handleScroll = (id) => {
         const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
+        if (section) section.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
         <Section>
             <NavBar>
                 <LogoWrapper onClick={() => handleScroll("home")}>
-                    <div className="logo-mask"></div>
+                    <div className="logo-mask" />
                 </LogoWrapper>
                 <Menu>
                     <MenuItem onClick={() => handleScroll("home")}>首頁</MenuItem>
