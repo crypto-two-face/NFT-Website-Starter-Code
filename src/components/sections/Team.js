@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BgVideo from "../../assets/author.mp4";
+import { FaInstagram, FaThreads, FaXTwitter } from "react-icons/fa6";
 
 const Section = styled.section`
     min-height: 100vh;
@@ -111,6 +112,26 @@ const Bio = styled.p`
   text-shadow: 0 0 3px rgba(255,255,255,0.3);
 `;
 
+
+const SocialLinks = styled.div`
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+
+  a {
+    color: #fff;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #00ffff;
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+    }
+  }
+`;
+
+
 const AuthorCard = () => {
     return (
         <Section>
@@ -127,6 +148,17 @@ const AuthorCard = () => {
                     <Bio>創作者、網頁工程師與 NFT 愛好者</Bio>
                     <Bio>熱衷於區塊鏈、藝術與技術的交匯</Bio>
                     <Bio>夢想是賺錢，賺到足以讓世界變得更好的錢</Bio>
+                    <SocialLinks>
+                        <a href="https://www.instagram.com/crypto_two_face/" target="_blank" rel="noopener noreferrer">
+                            <FaInstagram />
+                        </a>
+                        <a href="https://www.threads.com/@crypto_two_face" target="_blank" rel="noopener noreferrer">
+                            <FaThreads />
+                        </a>
+                        <a href="https://x.com/crypto_two_face" target="_blank" rel="noopener noreferrer">
+                            <FaXTwitter />
+                        </a>
+                    </SocialLinks>
                 </Right>
             </Card>
         </Section>

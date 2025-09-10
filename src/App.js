@@ -1,6 +1,7 @@
 import {ThemeProvider} from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles";
 import {light} from "./styles/Themes";
+import styled from "styled-components";
 
 import Navigation from "./components/Navigation";
 import Home from "./components/sections/Home";
@@ -11,19 +12,30 @@ import Team from "./components/sections/Team";
 import Faq from "./components/sections/Faq";
 import Footer from "./components/Footer";
 
+const Main = styled.main`
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+`;
+
+const Section = styled.section`
+    height: ${({ full }) => (full ? "100vh" : "auto")};
+    scroll-snap-align: start;
+`;
+
+
 function App() {
     return (
         <ThemeProvider theme={light}>
             <>
                 <GlobalStyles/>
                 <Navigation/>
-                <Home/>
-                <About/>
-                {/*<RoadMap/>*/}
-                {/*<ShowCase/>*/}
-                <Team/>
-                <Faq/>
-                <Footer/>
+                <Main>
+                    <Section id="home"><Home/></Section>
+                    <Section id="nfts"><About/></Section>
+                    <Section id="author"><Team/></Section>
+                    <Section id="faq"><Faq/></Section>
+                    <Section><Footer/></Section>
+                </Main>
             </>
         </ThemeProvider>
     );
