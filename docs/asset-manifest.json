@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/NFT-Website-Starter-Code/static/css/main.723bf726.css",
+    "main.js": "/NFT-Website-Starter-Code/static/js/main.01cd1403.js",
+    "static/media/output.mp4": "/NFT-Website-Starter-Code/static/media/output.a59e34fd74b167cc5f85.mp4",
+    "static/media/author.mp4": "/NFT-Website-Starter-Code/static/media/author.fe8d1b629e6ff405bbe6.mp4",
+    "static/media/akaya-telivigala-telugu-400-normal.woff2": "/NFT-Website-Starter-Code/static/media/akaya-telivigala-telugu-400-normal.0030c290068717032677.woff2",
+    "static/media/akaya-telivigala-telugu-400-normal.woff": "/NFT-Website-Starter-Code/static/media/akaya-telivigala-telugu-400-normal.629041e34637c9ab2d58.woff",
+    "static/media/akaya-telivigala-latin-400-normal.woff2": "/NFT-Website-Starter-Code/static/media/akaya-telivigala-latin-400-normal.36b166abb6353fba7b2e.woff2",
+    "static/media/akaya-telivigala-latin-400-normal.woff": "/NFT-Website-Starter-Code/static/media/akaya-telivigala-latin-400-normal.89e96c7da78e3781fc86.woff",
+    "static/media/akaya-telivigala-latin-ext-400-normal.woff2": "/NFT-Website-Starter-Code/static/media/akaya-telivigala-latin-ext-400-normal.66a10f891de7c9d8b0f6.woff2",
+    "static/media/sora-latin-400-normal.woff": "/NFT-Website-Starter-Code/static/media/sora-latin-400-normal.4af0c3f5f44d257ec192.woff",
+    "static/media/sora-latin-400-normal.woff2": "/NFT-Website-Starter-Code/static/media/sora-latin-400-normal.ec171c38f34fec0fb95b.woff2",
+    "static/media/akaya-telivigala-latin-ext-400-normal.woff": "/NFT-Website-Starter-Code/static/media/akaya-telivigala-latin-ext-400-normal.9fbb493479afa7c7a78a.woff",
+    "static/media/sora-latin-ext-400-normal.woff": "/NFT-Website-Starter-Code/static/media/sora-latin-ext-400-normal.8352f9161f5bcbee5325.woff",
+    "static/media/sora-latin-ext-400-normal.woff2": "/NFT-Website-Starter-Code/static/media/sora-latin-ext-400-normal.81e03f97ace1a6d6d0ea.woff2",
+    "index.html": "/NFT-Website-Starter-Code/index.html",
+    "main.723bf726.css.map": "/NFT-Website-Starter-Code/static/css/main.723bf726.css.map",
+    "main.01cd1403.js.map": "/NFT-Website-Starter-Code/static/js/main.01cd1403.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.723bf726.css",
+    "static/js/main.01cd1403.js"
+  ]
+}
