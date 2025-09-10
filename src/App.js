@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import Navigation from "./components/Navigation";
 import Home from "./components/sections/Home";
-import About from "./components/sections/About";
+// import About from "./components/sections/About";
 import Team from "./components/sections/Team";
 import Faq from "./components/sections/Faq";
 import Footer from "./components/Footer";
@@ -29,7 +29,7 @@ function App() {
                 <Navigation/>
                 <Main>
                     <Section id="home"><Home/></Section>
-                    <Section id="nfts"><About/></Section>
+                    {/*<Section id="nfts"><About/></Section>*/}
                     <Section id="author"><Team/></Section>
                     <Section id="faq"><Faq/></Section>
                     <Section><Footer/></Section>

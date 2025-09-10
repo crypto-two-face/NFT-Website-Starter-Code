@@ -108,7 +108,7 @@ const Navigation = () => {
                 </LogoWrapper>
                 <Menu>
                     <MenuItem onClick={() => handleScroll("home")}>首頁</MenuItem>
-                    <MenuItem onClick={() => handleScroll("nfts")}>NFTs.</MenuItem>
+                    {/*<MenuItem onClick={() => handleScroll("nfts")}>NFTs.</MenuItem>*/}
                     <MenuItem onClick={() => handleScroll("author")}>作者</MenuItem>
                     <MenuItem onClick={() => handleScroll("faq")}>FAQ</MenuItem>
                 </Menu>
