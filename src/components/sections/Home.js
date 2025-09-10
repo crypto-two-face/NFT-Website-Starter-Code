@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import CoverVideo from "../CoverVideo";
+import { SiOpensea } from "react-icons/si";
 
 /* ===== 背景：低調科幻網格 + 漸層暈光 ===== */
 const BgFx = styled.div`
@@ -251,17 +252,19 @@ export default function Home() {
                     onMouseMove={onMove}
                     onMouseLeave={onLeave}
                 >
-                    <Kicker>DISCOVER A NEW ERA OF COOL</Kicker>
+                    <Kicker>重新定義藝術</Kicker>
                     <Title>
                         A New Era Of <br />
                         <span>NFTs.</span>
                     </Title>
                     <Desc>
-                        Bored Of Apes? Try our new Ape Killers collection — fresh style, clean art, and a community-first vibe.
+                        Tired Of UGLY NFTs?
+                    </Desc>
+                    <Desc>
+                        Try our new collection — Glitch World.
                     </Desc>
 
-                    {/* ✅ 只留一顆按鈕 */}
-                    <Cta href="#nfts">Explore Collection</Cta>
+                    <Cta href="https://opensea.io/zh-TW/collection/glitch-world-two-face-eth"><SiOpensea />Explore on OpenSea</Cta>
                 </Card>
 
                 <Media>
