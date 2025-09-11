@@ -61,13 +61,18 @@ const BgFx = styled.div`
 /* ===== 外層區塊：置中兩欄 ===== */
 const Section = styled.section`
     position: relative;
-    min-height: ${({ theme }) => `calc(100vh - ${theme.navHeight})`};
+    min-height: ${({theme}) => `calc(100vh - ${theme.navHeight})`};
     width: 100%;
     background: #0c0c0e;
     display: grid;
     place-items: center;
     padding: clamp(24px, 4vw, 56px) 20px;
     overflow: hidden;
+
+    @media (max-width: 480px) {
+        padding: 0;
+    }
+
 `;
 
 const Container = styled.div`
@@ -80,6 +85,8 @@ const Container = styled.div`
 
     @media (max-width: 480px) {
         grid-template-columns: 1fr; /* 手機上下排 */
+        margin: 3.5rem auto 0;
+        width: 90%;
     }
 `;
 
@@ -142,13 +149,15 @@ const Card = styled.div`
             transparent 3px);
     background-blend-mode: overlay;
 
-    @media (prefers-reduced-motion: reduce) {
+    @media (max-width: 480px) {
         transform: none !important;
         &::after { display: none; }
-    }
-
-    @media (max-width: 480px) {
         padding: 16px;
+        
+        border-radius: 12px;
+        background: #141414;              /* 純色，乾淨一點 */
+        box-shadow: 0 2px 6px rgba(0,0,0,.35); /* 比較像 App 卡片 */
+        backdrop-filter: none;
     }
 `;
 
@@ -170,12 +179,21 @@ const Title = styled.h1`
         -webkit-background-clip: text;
         color: transparent;
     }
+    
+    @media (max-width: 480px) {
+        font-size: 20px;
+        line-height: 1.3;
+    }
 `;
 
 const Desc = styled.p`
     margin-top: 10px;
     color: rgba(255,255,255,.82);
     font-size: clamp(14px, 1.7vw, 16px);
+
+    @media (max-width: 480px) {
+        font-size: 8px;
+    }
 `;
 
 /* 按鈕：只留一顆，帶微發光 + 高速亮片 */
@@ -207,6 +225,14 @@ const Cta = styled.a`
     }
     &:hover::after {
         transform: translateX(120%);
+    }
+
+    @media (max-width: 480px) {
+        margin-top: 16px;
+        padding: 10px 14px;
+        font-size: 0.85rem;
+        border-radius: 6px;
+        box-shadow: none; /* 乾淨一點 */
     }
 `;
 

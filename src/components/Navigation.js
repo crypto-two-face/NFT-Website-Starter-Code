@@ -11,6 +11,10 @@ const Section = styled.header`
     z-index: 100;
     background: rgba(13, 13, 13, 0.8);
     backdrop-filter: blur(8px);
+
+    //* {
+    //    outline: 1px solid red; /* 臨時檢查用 */
+    //}
 `;
 
 const NavBar = styled.nav`
@@ -22,7 +26,7 @@ const NavBar = styled.nav`
     margin: 0 auto;
 
     @media (max-width: 480px) {
-        width: 96%;
+        width: 80%;
         height: 2.5rem;
         justify-content: space-around ;
     }
@@ -78,7 +82,7 @@ const Menu = styled.ul`
 
 const MenuItem = styled.li`
     margin: 0 1rem;
-    font-size: 1rem;
+    font-size: ${props => props.theme.fontLg};
     font-weight: 500;
     color: white;
     cursor: pointer;
@@ -98,6 +102,11 @@ const MenuItem = styled.li`
     &:hover::after {
         width: 100%;
     }
+
+    @media (max-width: 480px) {
+        font-size: ${props => props.theme.fontMd};
+        margin: 0 0.5rem;
+    }
 `;
 
 const Navigation = () => {
@@ -113,9 +122,9 @@ const Navigation = () => {
                     <div className="logo-mask" />
                 </LogoWrapper>
                 <Menu>
-                    <MenuItem onClick={() => handleScroll("home")}>首頁</MenuItem>
+                    <MenuItem onClick={() => handleScroll("home")}>Home</MenuItem>
                     {/*<MenuItem onClick={() => handleScroll("nfts")}>NFTs.</MenuItem>*/}
-                    <MenuItem onClick={() => handleScroll("author")}>作者</MenuItem>
+                    <MenuItem onClick={() => handleScroll("author")}>Author</MenuItem>
                     <MenuItem onClick={() => handleScroll("faq")}>FAQ</MenuItem>
                 </Menu>
             </NavBar>
