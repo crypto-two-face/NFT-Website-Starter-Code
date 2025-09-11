@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
 body{
     font-family: 'Sora', sans-serif;
     overflow-x: hidden;
+    max-width: 100vw;
 }
 
 h1,h2,h3,h4,h5,h6{

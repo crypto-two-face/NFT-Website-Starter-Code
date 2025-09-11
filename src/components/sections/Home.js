@@ -71,15 +71,16 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-  width: min(1200px, 94vw);
-  display: grid;
-  grid-template-columns: 1.05fr 1fr; /* 左文案略大，視覺平衡 */
-  align-items: center;
-  gap: clamp(16px, 4vw, 48px);
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr; /* 左文案略大，視覺平衡 */
+    align-items: center;
+    gap: clamp(16px, 4vw, 48px);
 
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr; /* 手機上下排 */
-  }
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr; /* 手機上下排 */
+    }
 `;
 
 /* ===== 卡片：玻璃 + 霓虹邊 + 傾斜 + 光澤 ===== */
@@ -144,6 +145,10 @@ const Card = styled.div`
     @media (prefers-reduced-motion: reduce) {
         transform: none !important;
         &::after { display: none; }
+    }
+
+    @media (max-width: 480px) {
+        padding: 16px;
     }
 `;
 

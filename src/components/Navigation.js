@@ -18,8 +18,14 @@ const NavBar = styled.nav`
     justify-content: space-between;
     align-items: center;
     width: 85%;
-    height: ${({ theme }) => theme.navHeight};
+    height: ${({theme}) => theme.navHeight};
     margin: 0 auto;
+
+    @media (max-width: 480px) {
+        width: 96%;
+        height: 2.5rem;
+        justify-content: space-around ;
+    }
 `;
 
 /* 以 clamp + vw 放大，避免死 px；logo 高度跟 navHeight 對齊 */
@@ -28,8 +34,8 @@ const LogoWrapper = styled.div`
     height: auto;
     cursor: pointer;
 
-    @media (max-width: 768px) {
-        width: clamp(180px, 36vw, 320px);
+    @media (max-width: 480px) {
+        width: clamp(130px, 30vw, 260px);
     }
 
     .logo-mask {
@@ -52,13 +58,13 @@ const LogoWrapper = styled.div`
 
     @keyframes gradientMove {
         0% {
-            background-position: 0% 50%;
+            background-position: 0 50%;
         }
         50% {
             background-position: 100% 50%;
         }
         100% {
-            background-position: 0% 50%;
+            background-position: 0 50%;
         }
     }
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FaInstagram, FaThreads, FaXTwitter } from "react-icons/fa6";
+import {FaInstagram, FaThreads, FaXTwitter} from "react-icons/fa6";
 
 const Section = styled.section`
     min-height: 100vh;
@@ -27,9 +27,15 @@ const NeonBackground = styled.div`
     z-index: -2;
 
     @keyframes neonGradient {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
     }
 `;
 
@@ -105,42 +111,81 @@ const Position = styled.h2`
 `;
 
 const Bio = styled.p`
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ccc;
-  text-shadow: 0 0 3px rgba(255,255,255,0.3);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
 `;
 
 
 const SocialLinks = styled.div`
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 1.2rem;
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.2rem;
 
-  a {
-    color: #fff;
-    font-size: 1.6rem;
-    transition: all 0.3s ease;
+    a {
+        color: #fff;
+        font-size: 1.6rem;
+        transition: all 0.3s ease;
 
-    &:hover {
-      color: #00ffff;
-      transform: scale(1.2);
-      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+        &:hover {
+            color: #00ffff;
+            transform: scale(1.2);
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+        }
     }
-  }
 `;
 
 
 const AuthorCard = () => {
     return (
         <Section>
-            <NeonBackground />
+            <NeonBackground/>
             <Card>
+
                 <Left>
-                    <video autoPlay loop muted playsInline>
-                        <source src={`${process.env.PUBLIC_URL}/videos/author.mp4`} type="video/mp4" />
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        poster={`${process.env.PUBLIC_URL}/pics/home_video_preload.webp`}
+                    >
+                        {/* 高畫質 (桌面) */}
+                        <source
+                            src={`${process.env.PUBLIC_URL}/videos/author/author_av1.webm`}
+                            type="video/webm; codecs=av01"
+                            media="(min-width: 1025px)"
+                        />
+                        <source
+                            src={`${process.env.PUBLIC_URL}/videos/author/author_vp9.webm`}
+                            type="video/webm; codecs=vp9"
+                            media="(min-width: 1025px)"
+                        />
+                        <source
+                            src={`${process.env.PUBLIC_URL}/videos/author/author.mp4`}
+                            type="video/mp4"
+                            media="(min-width: 1025px)"
+                        />
+
+                        {/* 手機高階 (平板 / 大螢幕手機) */}
+                        <source
+                            src={`${process.env.PUBLIC_URL}/videos/author/author_720.mp4`}
+                            type="video/mp4"
+                            media="(min-width: 481px) and (max-width: 1024px)"
+                        />
+
+                        {/* 手機低階 (小螢幕 / 省流量) */}
+                        <source
+                            src={`${process.env.PUBLIC_URL}/videos/author/author_480.mp4`}
+                            type="video/mp4"
+                            media="(max-width: 480px)"
+                        />
+
                     </video>
                 </Left>
+
                 <Right>
                     <Name>@Crypto_two_face</Name>
                     <Position>Founder / Web Developer</Position>
@@ -149,13 +194,13 @@ const AuthorCard = () => {
                     <Bio>夢想是賺錢，賺到足以讓世界變得更好的錢</Bio>
                     <SocialLinks>
                         <a href="https://www.instagram.com/crypto_two_face/" target="_blank" rel="noopener noreferrer">
-                            <FaInstagram />
+                            <FaInstagram/>
                         </a>
                         <a href="https://www.threads.com/@crypto_two_face" target="_blank" rel="noopener noreferrer">
-                            <FaThreads />
+                            <FaThreads/>
                         </a>
                         <a href="https://x.com/crypto_two_face" target="_blank" rel="noopener noreferrer">
-                            <FaXTwitter />
+                            <FaXTwitter/>
                         </a>
                     </SocialLinks>
                 </Right>
