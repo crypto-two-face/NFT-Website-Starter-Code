@@ -36,6 +36,18 @@ const SocialLinks = styled.div`
             text-shadow: 0 0 15px rgba(0, 255, 255, 1);
         }
     }
+
+    @media (max-width: 480px) {
+        a {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+    }
+
 `;
 
 const CopyRight = styled.p`

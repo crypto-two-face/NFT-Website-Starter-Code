@@ -57,18 +57,6 @@ const ArtLayer = styled.div`
     pointer-events: none;
 `;
 
-/* 同張圖模糊做霓虹外擴（邊緣物化） */
-const ArtGlow = styled.div`
-    position: absolute;
-    inset: -1.5%;
-    background: center / cover no-repeat;
-    background-image: var(--art);
-    filter: blur(18px) saturate(1.6);
-    opacity: .55;
-    mix-blend-mode: screen;
-    pointer-events: none;
-`;
-
 // 放在 styled 區塊
 const MediaGroup = styled.div`
     position: absolute;
@@ -207,8 +195,7 @@ const SocialBar = styled.nav`
 `;
 
 /* === 資源路徑 === */
-const ART_IMG = `${process.env.PUBLIC_URL}/pics/author_mobile.webp`;
-const VIDEO_480 = `${process.env.PUBLIC_URL}/videos/author/author_480.mp4`;
+const VIDEO_480 = `${process.env.PUBLIC_URL}/videos/author/author_1080.mp4`;
 
 const TeamMobile = () => {
     return (
@@ -227,9 +214,6 @@ const TeamMobile = () => {
                     <source src={VIDEO_480} type="video/mp4"/>
                 </VideoBase>
 
-                {/* 圖片融合（同張圖提供主體＆邊緣霓虹） */}
-                <ArtGlow style={{["--art"]: `url(${ART_IMG})`}}/>
-                <ArtLayer style={{["--art"]: `url(${ART_IMG})`}}/>
                 </MediaGroup>
 
                 {/* 邊框效果 & 底部閱讀遮罩 */}
