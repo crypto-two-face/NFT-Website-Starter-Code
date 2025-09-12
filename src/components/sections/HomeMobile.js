@@ -25,10 +25,16 @@ const VideoLayer = styled.div`
     z-index: 0;
 `;
 
+// 遮罩
 const Fade = styled.div`
-    grid-area: stack;
-    align-self: end;
-    height: 45%;
+    //grid-area: stack;
+    //align-self: end;
+    //height: 45%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55%;
     background: linear-gradient(
             to top,
             rgba(12, 12, 14, 0.99) 0%,
@@ -83,7 +89,6 @@ export default function HomeMobile() {
         <Section>
             <VideoWrapper>
                 <VideoLayer>
-                    {/* 這裡改用填滿模式 */}
                     <CoverVideo $fill/>
                 </VideoLayer>
                 <Fade/>

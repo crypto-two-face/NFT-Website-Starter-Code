@@ -6,10 +6,10 @@ import styled from "styled-components";
 import Navigation from "./components/Navigation";
 import Home from "./components/sections/Home";
 import HomeMobile from "./components/sections/HomeMobile";
-// import About from "./components/sections/About";
 import Team from "./components/sections/Team";
 import Faq from "./components/sections/Faq";
 import Footer from "./components/Footer";
+import TeamMobile from "./components/sections/TeamMobile";
 
 const Main = styled.main`
     scroll-snap-type: y mandatory;
@@ -33,11 +33,15 @@ function App() {
                 <GlobalStyles/>
                 <Navigation/>
                 <Main>
+
                     <Section id="home">
                         {isMobile ? <HomeMobile/> : <Home/>}
                     </Section>
-                    {/*<Section id="nfts"><About/></Section>*/}
-                    <Section id="author"><Team/></Section>
+
+                    <Section id="author">
+                        {isMobile ? <TeamMobile/> : <Team/>}
+                    </Section>
+
                     <Section id="faq"><Faq/></Section>
                     <Section><Footer/></Section>
                 </Main>

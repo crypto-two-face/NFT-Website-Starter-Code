@@ -1,6 +1,6 @@
 // CoverVideo.jsx
-import React, { useEffect, useRef, useState } from "react";
-import styled, { css } from "styled-components";
+import React, {useEffect, useRef, useState} from "react";
+import styled, {css} from "styled-components";
 
 const VideoContainer = styled.div`
     position: relative;
@@ -33,7 +33,7 @@ const VideoContainer = styled.div`
         opacity: 0;
         transition: opacity 0.35s ease;
         z-index: 0;
-        ${({ $fill }) => $fill && "display:none;"} /* 背景模式不需要暈光 */
+        ${({$fill}) => $fill && "display:none;"} /* 背景模式不需要暈光 */
     }
 
     &.paused::before {
@@ -76,12 +76,12 @@ const VideoContainer = styled.div`
     @media (max-width: 1024px) {
         video {
             max-width: min(92vw, 520px);
-            ${({ $fill }) => $fill && "max-width:none;"} /* 填滿忽略此限制 */
+            ${({$fill}) => $fill && "max-width:none;"} /* 填滿忽略此限制 */
         }
     }
 `;
 
-const CoverVideo = ({ $fill = false }) => {
+const CoverVideo = ({$fill = false}) => {
     const videoRef = useRef(null);
     const [paused, setPaused] = useState(false);
     const [isTouch, setIsTouch] = useState(true);
@@ -138,13 +138,13 @@ const CoverVideo = ({ $fill = false }) => {
                 />
                 {/* 平板 / 大手機 */}
                 <source
-                    src={`${process.env.PUBLIC_URL}/videos/home_video/home_video_720.mp4`}
+                    src={`${process.env.PUBLIC_URL}/videos/home_video/home_video_1080.mp4`}
                     type="video/mp4"
                     media="(min-width: 481px) and (max-width: 1024px)"
                 />
                 {/* 小手機 / 省流量 */}
                 <source
-                    src={`${process.env.PUBLIC_URL}/videos/home_video/home_video_720.mp4`}
+                    src={`${process.env.PUBLIC_URL}/videos/home_video/home_video_1080.mp4`}
                     type="video/mp4"
                     media="(max-width: 480px)"
                 />
